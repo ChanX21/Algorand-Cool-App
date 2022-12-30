@@ -1,0 +1,112 @@
+#pragma version 5
+txn ApplicationID
+int 0
+==
+bnz main_l14
+txn OnCompletion
+int OptIn
+==
+bnz main_l13
+txna ApplicationArgs 0
+byte "SET"
+==
+bnz main_l12
+txna ApplicationArgs 0
+byte "ADD"
+==
+bnz main_l11
+txna ApplicationArgs 0
+byte "INCR"
+==
+bnz main_l10
+txna ApplicationArgs 0
+byte "BLNCE"
+==
+bnz main_l9
+txna ApplicationArgs 0
+byte "ASSET"
+==
+bnz main_l8
+err
+main_l8:
+itxn_begin
+int acfg
+itxn_field TypeEnum
+int 1000000
+itxn_field ConfigAssetTotal
+int 3
+itxn_field ConfigAssetDecimals
+byte "CANDIES"
+itxn_field ConfigAssetUnitName
+byte "CANDIE COIN"
+itxn_field ConfigAssetName
+byte "https://gold.rush"
+itxn_field ConfigAssetURL
+global CurrentApplicationAddress
+itxn_field ConfigAssetManager
+global CurrentApplicationAddress
+itxn_field ConfigAssetReserve
+global CurrentApplicationAddress
+itxn_field ConfigAssetFreeze
+global CurrentApplicationAddress
+itxn_field ConfigAssetClawback
+itxn_submit
+byte "Official Asset ID"
+itxn CreatedAssetID
+app_global_put
+int 1
+b main_l15
+main_l9:
+txna Accounts 1
+byte "Official Asset ID"
+app_global_get
+asset_holding_get AssetBalance
+store 0
+store 1
+int 1
+b main_l15
+main_l10:
+txna Accounts 0
+byte "Addition Value"
+txna Accounts 0
+byte "Addition Value"
+app_local_get
+int 1
++
+app_local_put
+int 1
+b main_l15
+main_l11:
+byte "Counter"
+byte "Counter"
+app_global_get
+txna Accounts 0
+byte "Addition Value"
+app_local_get
++
+app_global_put
+int 1
+b main_l15
+main_l12:
+txna Accounts 0
+byte "Addition Value"
+int 1
+app_local_put
+int 1
+b main_l15
+main_l13:
+int 1
+b main_l15
+main_l14:
+byte "Counter"
+int 0
+app_global_put
+byte "OutputVariable"
+byte "Output Value X"
+app_global_put
+byte "Official Asset ID"
+byte "Asset ID not Created"
+app_global_put
+int 1
+main_l15:
+return

@@ -1,12 +1,16 @@
 const {readFileSync, promises: fsPromises} = require('fs');
+require('dotenv').config()
+
 
 const { OnApplicationComplete } = require('algosdk');
 global.atob = require("atob");
 const algosdk = require('algosdk');
+const { config } = require('process');
+const { domainToASCII } = require('url');
 const baseServer = 'https://testnet-algorand.api.purestake.io/ps2'
 const port = '';
 const token = {
-    'X-API-Key': 'sym8maTCGu2Syra3flOuJ7qh11ZVNern6njQpYAu'
+    'X-API-Key': process.env.API_KEY
 }
 
 function syncReadFile(filename) {
@@ -249,7 +253,7 @@ const createAccount =  function (){
 
 // createAccount();
 
-//  makeApplication();
+ makeApplication();
 
 // optInApp();
 
@@ -259,7 +263,7 @@ const createAccount =  function (){
 
 // incrementAdder();
 
-assetCreation();
+// assetCreation();
 
 
 

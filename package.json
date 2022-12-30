@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "algosdk": "^1.18.1",
-    "atob": "^2.1.2"
+    "atob": "^2.1.2",
+    "dotenv": "^16.0.3"
   }
 }

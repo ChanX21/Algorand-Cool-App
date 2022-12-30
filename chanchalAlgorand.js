@@ -54,7 +54,7 @@ async function compileProgram(algodClient, programSource){
 let applicationID = 114882863;
 
 async function makeApplication(){
-    let accountSender = algosdk.mnemonicToSecretKey("gasp open bus clock saddle range process interest final unique know bundle tumble flame library setup skill donate canvas atom hint income weather above napkin");
+    let accountSender = algosdk.mnemonicToSecretKey(process.env.MNUEMONIC_KEY);
     let params = await algodclient.getTransactionParams().do();   
     // let compiledApprovalTeal = await algodclient.compile(approvalCode).do();
     // let compiledClearTeal = await algodclient.compile(clearCode).do();

@@ -93,8 +93,8 @@ async function makeApplication(){
 }
 
 async function optInApp(){
-    let accountSender = algosdk.mnemonicToSecretKey("gasp open bus clock saddle range process interest final unique know bundle tumble flame library setup skill donate canvas atom hint income weather above napkin");
-    let params = await algodclient.getTransactionParams().do(); 
+  let accountSender = algosdk.mnemonicToSecretKey(process.env.MNUEMONIC_KEY);
+  let params = await algodclient.getTransactionParams().do(); 
 
     encodedString = Buffer.from("ADD").toString('base64')
 
@@ -122,8 +122,8 @@ async function optInApp(){
 
 
 async function setupAdder(){
-    let accountSender = algosdk.mnemonicToSecretKey("gasp open bus clock saddle range process interest final unique know bundle tumble flame library setup skill donate canvas atom hint income weather above napkin");
-    let params = await algodclient.getTransactionParams().do(); 
+  let accountSender = algosdk.mnemonicToSecretKey(process.env.MNUEMONIC_KEY);
+  let params = await algodclient.getTransactionParams().do(); 
 
     encodedString = Buffer.from("ADD").toString('base64')
 
@@ -150,8 +150,8 @@ async function setupAdder(){
 }
 
 async function incrementCounter(){
-    let accountSender = algosdk.mnemonicToSecretKey("gasp open bus clock saddle range process interest final unique know bundle tumble flame library setup skill donate canvas atom hint income weather above napkin");
-    let params = await algodclient.getTransactionParams().do(); 
+  let accountSender = algosdk.mnemonicToSecretKey(process.env.MNUEMONIC_KEY);
+  let params = await algodclient.getTransactionParams().do(); 
 
     encodedString = Buffer.from("ADD").toString('base64')
 
@@ -179,7 +179,7 @@ async function incrementCounter(){
 
 
 async function assetCreation(){
-  let accountSender = algosdk.mnemonicToSecretKey("gasp open bus clock saddle range process interest final unique know bundle tumble flame library setup skill donate canvas atom hint income weather above napkin");
+  let accountSender = algosdk.mnemonicToSecretKey(process.env.MNUEMONIC_KEY);
   let params = await algodclient.getTransactionParams().do(); 
 
   encodedString = Buffer.from("ADD").toString('base64')
@@ -207,8 +207,8 @@ async function assetCreation(){
 }
 
 async function incrementAdder(){
-    let accountSender = algosdk.mnemonicToSecretKey("gasp open bus clock saddle range process interest final unique know bundle tumble flame library setup skill donate canvas atom hint income weather above napkin");
-    let params = await algodclient.getTransactionParams().do(); 
+  let accountSender = algosdk.mnemonicToSecretKey(process.env.MNUEMONIC_KEY);
+  let params = await algodclient.getTransactionParams().do(); 
 
     // encodedString = Buffer.from("ADD").toString('base64')
 

@@ -177,7 +177,6 @@ async function incrementCounter(){
     console.log(confirmedTxn)
 }
 
-
 async function assetCreation(){
   let accountSender = algosdk.mnemonicToSecretKey(process.env.MNUEMONIC_KEY);
   let params = await algodclient.getTransactionParams().do(); 
@@ -253,7 +252,7 @@ const createAccount =  function (){
 
 // createAccount();
 
- makeApplication();
+// makeApplication();
 
 // optInApp();
 
@@ -263,7 +262,13 @@ const createAccount =  function (){
 
 // incrementAdder();
 
+// decrementCounter();
+
+// decrementAdder();
+
 // assetCreation();
+
+// sendAsset();
 
 
 

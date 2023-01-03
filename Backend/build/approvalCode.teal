@@ -51,9 +51,6 @@ itxn_field ConfigAssetFreeze
 global CurrentApplicationAddress
 itxn_field ConfigAssetClawback
 itxn_submit
-byte "Official Asset ID"
-itxn CreatedAssetID
-app_global_put
 int 1
 b main_l15
 main_l9:

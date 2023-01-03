@@ -66,9 +66,9 @@ def clear_program():
 
 if __name__ == "__main__":
     contract_approval_code = compileTeal(approval_program(), Mode.Application, version=5)
-    with open('./build/approvalCode.teal', 'w') as f:
+    with open('../build/approvalCode.teal', 'w') as f:
         f.write(contract_approval_code)
     contract_clear_code = compileTeal(clear_program(), Mode.Application, version=5)    
-    with open('./build/clearCode.teal', 'w') as f:
+    with open('../build/clearCode.teal', 'w') as f:
         f.write(contract_clear_code)
 

@@ -51,7 +51,7 @@ async function compileProgram(algodClient, programSource){
     return compileBytes;
 }
 
-let applicationID = 114882863;
+let applicationID = 151778255;
 
 async function makeApplication(){
     let accountSender = algosdk.mnemonicToSecretKey(process.env.MNUEMONIC_KEY);
@@ -182,13 +182,17 @@ async function assetCreation(){
   let params = await algodclient.getTransactionParams().do(); 
 
   encodedString = Buffer.from("ADD").toString('base64')
+  console.log(params)
 
   // appArgs = Uint8Array[encodedString];
 
   var enc = new TextEncoder() ;
   let appArgs = [];
   appArgs.push(enc.encode("ASSET"));
+  
+  params.fee = 300000
 
+  console.log("after",params)
   let action = algosdk.makeApplicationNoOpTxn(accountSender.addr,params,applicationID,appArgs);
 
   let signedTxn = action.signTxn(accountSender.sk);
@@ -270,8 +274,6 @@ const createAccount =  function (){
 
 // sendAsset();
 
-
-
-console.log(algodclient);
+// console.log(algodclient);
 
 

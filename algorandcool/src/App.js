@@ -5,7 +5,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src='https://seeklogo.com/images/A/algorand-algo-logo-267E891DCB-seeklogo.com.png' className="App-Algo-Logo"></img> 
+       {/* have to add title here */}
+        <h1 className="App-title">Algo Counter</h1>    
+        <label className="Text-Counter">1</label>   
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
